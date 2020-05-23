@@ -1,0 +1,182 @@
+//Settings
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+//Variables
+
+$mainTan: #D8D1C8;
+$mainBlack: #292E39;
+
+//Mixins 
+
+@mixin buttons {
+    padding: 0.5rem 1rem;
+    font-size: 1.1rem;
+    font-weight: bolder;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+//Cointainer & Screen
+
+.container {
+    background: $mainTan;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+
+.container__join {
+    margin-top: 1rem;
+    background: $mainBlack;
+    color: white;
+    outline: none;
+    border: 1px solid white;
+    @include buttons;
+}
+
+.black__screen {
+    background: black;
+    opacity: 0.5;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+}
+
+.modal.hide {
+    display: none;
+}
+
+.hide {
+    display: none;
+}
+
+//Modal
+
+.modal {
+    background: $mainBlack;
+    color: white;
+    height: 40%;
+    width: 30%;
+    position: absolute;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    z-index: 10;
+    left: 35%;
+    top: 10%;
+    animation: 0.5s slideDown;
+
+    .fas {
+        justify-self: start;
+        margin-left: 1rem;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    .modal__title {
+        font-family: 'Cedarville Cursive', cursive;
+    }
+
+    .modal__tagline2 {
+        align-self: start;
+        font-size: 0.8rem;
+    }
+
+    form {
+        align-self: start;
+        width: 100%;
+    }
+
+    .form__input {
+        padding: 0.4rem;
+        width: 70%;
+        background: $mainBlack;
+        color: white;
+        border: 2px solid white;
+        outline: none;
+    }
+
+    .modal__join {
+        @include buttons;
+        font-size: 1rem;
+        padding: 0.4rem 0.6rem;
+        align-self: start;
+    }
+}
+
+//Join Banner
+
+.join__banner {
+    position: absolute;
+    background: $mainBlack;
+    height: 30%; 
+    width: 70%;
+    left: 15%;
+    top: 10%;
+    color: white;
+    display: grid;
+    grid-template-rows: 1fr 3fr 3fr;
+
+   .join__title {
+        font-family: 'Cedarville Cursive', cursive;
+    }
+
+    .join__tagline {
+        
+    }
+
+    .join__exit {
+        justify-self: start;
+        margin: 1rem;
+    }
+}
+
+.join__banner.hide {
+    display: none;
+}
+
+//Responsiveness
+
+@media (max-width: 1366px) {
+    .modal, .join__banner {
+        height: 40%;
+        width: 70%;
+        left: 15%;
+    }
+}
+
+@media (max-width: 420px) {
+    .modal, .join__banner {
+        width: 95%;
+        left: 2.5%;
+    }
+}
+
+//Animation
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        top: -10%;
+    }
+
+    to {
+        opacity: 1;
+        
+    }
+}

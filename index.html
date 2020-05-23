@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/739f32426d.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="script.js" defer></script>
+    <title>Modal</title>
+</head>
+<body>
+    <div class="container">
+        <button class="container__join">Join</button>
+        <main class="modal hide">
+            <i class="fas fa-times modal__exit"></i>
+            <h1 class="modal__title">JabJabJavascript</h1>
+            <p class="modal__tagline">
+                Get weekly awesome tutorials straight to your inbox. 
+            </p>
+            <p class="modal__tagline2">No Bs. Only quality goods.</p>
+            <form action="">
+                <label for="email">
+                    Email:<br>
+                    <input type="email" class="form__input" placeholder="Your email...">
+                </label>
+            </form>
+            <button class="modal__join">Join</button>
+        </main>
+        <div class="black__screen hide"></div>
+        <div class="join__banner hide">
+            <i class="fas fa-times join__exit"></i>
+            <h1 class="join__title">Thank you for joining!</h1>
+            <p class="join__tagline">Email sent to:<br> trial@sass.com</p>
+        </div>
+    </div>
+</body>
+</html>
